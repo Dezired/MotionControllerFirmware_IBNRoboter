@@ -1,0 +1,8 @@
+/Debug
+*.elf
+*.map
+*.list
+*.launch
+*.ld
+.settings/
+.mxproject
