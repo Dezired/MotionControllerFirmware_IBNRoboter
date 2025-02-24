@@ -31,6 +31,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "stm32g4xx_hal_tim.h"
 
 /* USER CODE END Includes */
 
@@ -49,8 +50,6 @@ extern "C" {
 
 /* USER CODE END EM */
 
-void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
-
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -61,16 +60,12 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define MOT_A_RESET_Pin GPIO_PIN_13
 #define MOT_A_RESET_GPIO_Port GPIOC
-#define MOT_A_TEMP_FAULT_NEU_Pin GPIO_PIN_14
-#define MOT_A_TEMP_FAULT_NEU_GPIO_Port GPIOC
 #define MOT_A_FAULT_Pin GPIO_PIN_15
 #define MOT_A_FAULT_GPIO_Port GPIOC
 #define MOT_A_M1_Pin GPIO_PIN_3
 #define MOT_A_M1_GPIO_Port GPIOF
 #define MOT_A_M2_Pin GPIO_PIN_4
 #define MOT_A_M2_GPIO_Port GPIOF
-#define MOT_A_M3_NEU_Pin GPIO_PIN_5
-#define MOT_A_M3_NEU_GPIO_Port GPIOF
 #define T5_CH_2_ENCODER_B_B_NEU_Pin GPIO_PIN_7
 #define T5_CH_2_ENCODER_B_B_NEU_GPIO_Port GPIOF
 #define T15_CH1_BRAKE_A_NEU_Pin GPIO_PIN_9
@@ -189,8 +184,8 @@ void Error_Handler(void);
 #define CAN1_TX_GPIO_Port GPIOD
 #define UART_5_RX_Pin GPIO_PIN_2
 #define UART_5_RX_GPIO_Port GPIOD
-#define T2_CH2_ENCODER_A_B_NEU_Pin GPIO_PIN_4
-#define T2_CH2_ENCODER_A_B_NEU_GPIO_Port GPIOD
+#define T2_CH2_ENCODER_A_A_NEU_Pin GPIO_PIN_4
+#define T2_CH2_ENCODER_A_A_NEU_GPIO_Port GPIOD
 #define SPI3_MISO_EXT_Pin GPIO_PIN_4
 #define SPI3_MISO_EXT_GPIO_Port GPIOB
 #define SPI3_MOSI_EXT_Pin GPIO_PIN_5
